@@ -1,0 +1,12 @@
+ALARM LOG - LINE C-03 - 2026-11-10 (sample)
+06:12:04 WARN  MOT-T01 Motor M-03 winding temperature 96.7 C
+06:18:30 CRIT  MOT-T02 Motor M-03 winding temperature 111.8 C
+06:18:31 INFO  Line C-03 stopped by PLC
+06:45:10 INFO  Motor M-03 temperature 58.3 C, restart permitted with L2 approval
+07:15:22 HIGH  CNV-J01 Conveyor jam detected at station 4
+07:17:22 INFO  Reset pressed (attempt 1)
+07:19:40 HIGH  CNV-J01 Conveyor jam detected at station 4
+07:21:40 INFO  Reset pressed (attempt 2)
+07:23:05 HIGH  CNV-J02 Jam persists after reset, line stopped
+07:40:02 MED   SNS-D01 Signal drop on SNS_J12_PROX
+07:41:10 MED   SNS-D01 Signal drop persists, >60 seconds

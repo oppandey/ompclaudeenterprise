@@ -1,0 +1,18 @@
+Demo Prompt
+Act as a Disaster Recovery Consultant.
+Review the attached Disaster Recovery Plan.
+Generate:
+1. Executive Summary
+2. Recovery Risks
+3. Missing Controls
+4. Recovery Readiness Assessment
+5. Recommendations
+Present findings in a management report.
+
+Questions 
+What are the top 10 risks in this DR plan?
+What dependencies could prevent successful recovery?
+Generate a DR audit checklist from this document.
+Compare recovery objectives against industry best practices.
+Create a CIO-ready executive summary in 200 words.
+Identify sections that require updating.

@@ -1,0 +1,15 @@
+ARCHITECTURE DIAGRAM - SAMPLE (text description of diagram)
+Environment: sample-prod (fictional)
+Cloud: AWS, region ap-south-1
+
+[Internet] -> [Application Load Balancer: alb-web-01] (public subnet 10.0.1.0/24)
+[alb-web-01] -> [EC2 Auto Scaling group: asg-app-01] (private subnet 10.0.2.0/24)
+[asg-app-01] -> [RDS PostgreSQL: rds-orders-01] (private subnet 10.0.3.0/24)
+[asg-app-01] -> [S3 bucket: s3-invoice-uploads-sample]
+[asg-app-01] -> [S3 bucket: s3-app-logs-sample]
+[Admin laptop] -> [Bastion EC2: bastion-01] (SSH port 22 from 0.0.0.0/0)
+
+Notes from diagram:
+- Diagram does not show encryption settings.
+- Diagram does not show S3 public access settings.
+- Security group names not labelled on diagram.

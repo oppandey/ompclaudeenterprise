@@ -1,0 +1,4 @@
+host,ip,asset_type,port,service,cve,cvss,description
+test-a,10.99.0.1,TEST,443,https,CVE-TEST-0001,7.0,Boundary test row: exactly 7.0 (must be included)
+test-b,10.99.0.2,TEST,443,https,CVE-TEST-0002,6.9,Boundary test row: just below threshold (must be excluded)
+test-c,10.99.0.3,TEST,443,https,CVE-TEST-0003,,Missing score test row (must not be guessed)

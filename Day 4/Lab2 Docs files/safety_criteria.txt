@@ -1,0 +1,9 @@
+SAFETY CRITERIA - STOP LINE AND ESCALATE
+
+Stop the line immediately and escalate to L2 and the safety officer if any of the following is true:
+1. Motor temperature exceeds 110 C (MOT-T02)
+2. Any E-stop or safety interlock fault is active (SAF-xxx)
+3. Conveyor jam persists after two reset attempts (CNV-J02)
+4. Any smoke, arcing, burning smell, or abnormal vibration is reported
+
+Do not restart without L2 approval.

@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Sample CloudFormation template for audit exercise (contains intentional issues)
+
+Resources:
+  LogsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: s3-app-logs-sample
+      AccessControl: PublicRead
+
+  AppSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: App tier SG
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 8080
+          ToPort: 8080
+          CidrIp: 0.0.0.0/0
+
+  OrdersDatabase:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      DBInstanceIdentifier: rds-orders-02
+      Engine: postgres
+      DBInstanceClass: db.t3.medium
+      AllocatedStorage: "50"
+      MasterUsername: dbadmin
+      MasterUserPassword: REPLACE_ME_SAMPLE
+      StorageEncrypted: false
+      PubliclyAccessible: true

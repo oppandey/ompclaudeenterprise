@@ -1,0 +1,28 @@
+Project:
+GFL Production Support Assistant
+
+Documents:
+✓ Production Support SOP
+✓ SAP Runbook
+✓ Interface Guide
+✓ Batch Operations Guide
+✓ Escalation Matrix
+✓ Error Knowledge Base
+✓ Incident Ticket Pack
+
+
+Scenario 1
+
+INC-2026-0145 has been raised during month-end closing. Provide investigation steps, escalation path, communications and recovery plan.
+
+Scenario 2
+
+A SAP Production outage occurred at 2:00 AM. Who should be contacted and what actions should be performed?
+
+Scenario 3
+
+Review all uploaded support documents and create a Service Desk Quick Reference Guide.
+
+Scenario 4
+
+Identify operational risks, missing procedures and governance gaps across all uploaded documents.

@@ -1,0 +1,4 @@
+host,ip,asset_type,port,service,cve,cvss,description
+print-01,10.20.9.4,IT-Print,631,ipp,CVE-2015-4000,3.7,Logjam weak DH parameters
+mail-gw,10.20.8.2,IT-Mail,25,smtp,CVE-2014-3566,3.4,POODLE SSLv3 fallback
+ntp-01,10.20.1.9,IT-Infra,123,ntp,CVE-2013-5211,5.0,NTP monlist amplification

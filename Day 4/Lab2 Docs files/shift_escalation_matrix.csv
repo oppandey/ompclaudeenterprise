@@ -1,0 +1,5 @@
+level,role,contact_channel,trigger
+L1,Shift technician,Radio channel 2,All alarms (first response)
+L2,Maintenance lead,Extension 4410,"Motor critical; jam persists; sensor drop over 60 seconds"
+L3,Plant engineering,On-call pager,Repeated faults within 24 hours
+Safety,Safety officer,Extension 4999,"Any SAF-xxx code; smoke; arcing; abnormal vibration"

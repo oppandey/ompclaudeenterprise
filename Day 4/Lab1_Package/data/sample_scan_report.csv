@@ -1,0 +1,13 @@
+host,ip,asset_type,port,service,cve,cvss,description
+mes-app-01,10.20.1.15,IT-MES,445,smb,CVE-2017-0144,8.1,SMBv1 remote code execution (EternalBlue)
+erp-db-02,10.20.2.40,IT-ERP,1521,oracle-tns,CVE-2012-1675,7.5,TNS listener poisoning
+hmi-line3,10.30.5.21,OT-HMI,3389,rdp,CVE-2019-0708,9.8,RDP remote code execution (BlueKeep)
+web-portal,10.20.3.8,IT-Web,8080,http,CVE-2021-44228,10.0,Log4j JNDI remote code execution
+file-srv-04,10.20.1.60,IT-File,443,https,CVE-2016-2183,7.5,SWEET32 legacy block cipher
+print-01,10.20.9.4,IT-Print,631,ipp,CVE-2015-4000,3.7,Logjam weak DH parameters
+dc-01,10.20.1.5,IT-AD,445,smb,CVE-2020-1472,10.0,Netlogon elevation of privilege (Zerologon)
+app-srv-07,10.20.4.12,IT-App,8080,http,CVE-2017-5638,10.0,Apache Struts content-type remote code execution
+vpn-gw,203.0.113.10,IT-Edge,443,https,CVE-2019-11510,10.0,SSL VPN arbitrary file read
+ntp-01,10.20.1.9,IT-Infra,123,ntp,CVE-2013-5211,5.0,NTP monlist amplification
+mail-gw,10.20.8.2,IT-Mail,25,smtp,CVE-2014-3566,3.4,POODLE SSLv3 fallback
+jump-01,10.20.1.30,IT-Infra,22,ssh,CVE-2018-15473,5.3,OpenSSH username enumeration

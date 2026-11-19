@@ -1,0 +1,8 @@
+fault_code,description,likely_cause_per_sop,severity,sop_reference
+MOT-T01,Motor M-03 temperature warning,Overload or reduced ventilation,Medium,SOP-CNV-07 1.2
+MOT-T02,Motor M-03 temperature critical,Sustained overload or bearing failure,Critical,SOP-CNV-07 1.3
+CNV-J01,Conveyor jam detected,Obstruction on belt or misaligned product,High,SOP-CNV-07 2.1
+CNV-J02,Conveyor jam persists after reset,Physical obstruction not cleared,High,SOP-CNV-07 2.3
+SNS-D01,Sensor signal drop,Loose connector or failed field device,Medium,SOP-CNV-07 3.1
+SAF-001,E-stop activated,Operator or safety device triggered,Critical,SOP-CNV-07 4.1
+SAF-002,Safety interlock open,Guard door opened,Critical,SOP-CNV-07 4.1

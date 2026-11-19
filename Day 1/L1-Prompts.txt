@@ -1,0 +1,32 @@
+Demo Prompts
+Prompt 1: Security Audit
+Act as a Cybersecurity Auditor.
+Review the attached Password Management Policy.
+Identify:
+1. Security weaknesses
+2. Missing controls
+3. Compliance concerns
+4. Business risks
+Present results in a table with:
+Finding | Risk | Recommendation | Priority
+________________________________________
+Prompt 2: Executive Review
+Act as a Chief Information Security Officer (CISO).
+Review the attached policy.
+Generate:
+• Executive Summary
+• Top Security Findings
+• Risk Ratings
+• Remediation Roadmap
+Use executive-level language suitable for senior management.
+________________________________________
+Prompt 3: ISO 27001 Assessment
+Assess the attached policy against ISO 27001 security principles.
+Identify:
+• Missing controls
+• Governance weaknesses
+• Authentication gaps
+• Recommended changes
+Provide an audit-style report.
+________________________________________
+

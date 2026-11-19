@@ -1,0 +1,6 @@
+register_address,tag,data_type,scale,unit,description
+40001,M03_WINDING_TEMP,INT16,0.1,C,Motor M-03 winding temperature
+40002,M03_CURRENT,INT16,0.1,A,Motor M-03 drive current
+40003,C03_BELT_SPEED,UINT16,0.01,m/s,Conveyor C-03 belt speed
+40004,C03_JAM_SENSOR,BOOL,1,bool,Jam sensor station 4
+40005,SNS_J12_PROX,BOOL,1,bool,Proximity sensor junction J12

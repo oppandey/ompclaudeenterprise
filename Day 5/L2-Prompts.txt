@@ -1,0 +1,39 @@
+Demo Prompt 1: Executive Summary
+Act as a CIO.
+Review the attached incident report.
+Create:
+• Executive Summary
+• Business Impact Assessment
+• Management Recommendations
+Limit response to one page.
+________________________________________
+Demo Prompt 2: Root Cause Analysis
+Act as a Senior Incident Manager.
+Analyze the incident report.
+Create:
+1. Incident Summary
+2. Probable Root Causes
+3. Contributing Factors
+4. Corrective Actions
+5. Preventive Actions
+Present results in table format.
+________________________________________
+Demo Prompt 3: Risk Register Generation
+Review the attached incident report.
+Generate a risk register including:
+Risk
+Probability
+Impact
+Mitigation
+Owner
+Present results in executive reporting format.
+________________________________________
+Demo Prompt 4: IT Operations Assistant
+Act as an IT Operations Consultant.
+Review the incident report.
+Identify:
+• Process weaknesses
+• Monitoring gaps
+• Governance gaps
+• Automation opportunities
+Generate a prioritized improvement roadmap for the next 90 days.

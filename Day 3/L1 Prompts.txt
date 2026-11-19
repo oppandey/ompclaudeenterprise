@@ -1,0 +1,59 @@
+Here is a prompt sequence mapped to the lab steps. It is ordered so each prompt builds on the previous output and keeps the model grounded in clause numbers.
+
+## 0. Setup (Project context)
+
+| # | Purpose | Prompt |
+|---|---|---|
+| 0.1 | Project instructions (set once) | You are a senior IT governance and ISO/IEC 27001 auditor reviewing the uploaded policy. Always cite clause numbers (for example 9.2.1) and Annex references. Quote at most one short phrase per finding and never invent clause text. If something is not in the document, say "not found in document". Present findings in tables unless I ask otherwise. |
+| 0.2 | Ingestion check (context retention test) | Confirm the document loaded completely. Return: total sections, the title of each section, the list of annexes, and the document version and approval date. Then tell me what you could not read, if anything. |
+| 0.3 | Needle test across the long context | Without searching by keyword, tell me what Annex C says about backup sets and what clause 15.1.2 says about backup retention. Quote both and state whether they agree. |
+
+## 1. Step 2: Contradictions (retention vs security)
+
+| # | Purpose | Prompt |
+|---|---|---|
+| 1.1 | Targeted scan | Scan the full document for contradictions between data retention requirements and security requirements. Cover logs, backups, encryption keys, leaver data, privileged session recordings and data residency. Return a table with columns: ID, Clause A, Clause B (and Annex rows), exact conflicting values, operational consequence, and severity (Critical/High/Medium). |
+| 1.2 | Cross-section sweep | Now find contradictions that are not about retention, such as remote access, password rules, patch timelines, classification levels and incident reporting times. Use the same table format and do not repeat earlier findings. |
+| 1.3 | Annex vs body check | Compare every value in Annexes B to G against the matching clause in the main body. List every mismatch with the clause, the annex row and both values. |
+| 1.4 | Self-verification | For each finding in your tables, re-read the cited clauses and mark it Confirmed or Not confirmed. Remove any you cannot support with the document text. |
+
+## 2. Step 3: Mandatory controls without enforcement
+
+| # | Purpose | Prompt |
+|---|---|---|
+| 2.1 | Extraction | Extract every requirement that uses "shall" or "must". For each, test whether it names four things: an owner, an enforcement mechanism or tool, a frequency or SLA, and evidence. Return only the requirements missing at least one, as a table: clause, requirement summary, missing elements, and risk if unenforced. |
+| 2.2 | Completeness check | How many "shall/must" requirements did you evaluate in total, and how many failed? Show the count per section so I can check coverage. |
+| 2.3 | Remediation drafting | For the top 10 by risk, propose an enforceable rewrite that adds the missing owner, tooling, frequency and evidence. Keep each rewrite to two sentences. |
+
+## 3. Obsolete clauses and ISO baseline
+
+| # | Purpose | Prompt |
+|---|---|---|
+| 3.1 | Obsolescence detection | Identify clauses that reference outdated technologies, standards, regulations or product versions. Return a table: clause, what is outdated, why (with approximate end-of-life or supersession date), and a modern replacement. Flag anything you are unsure of as "verify with vendor". |
+| 3.2 | Legacy vs ISO comparison | Compare the policy against ISO/IEC 27001:2022 Annex A. For each of the four themes (Organizational, People, Physical, Technological), list covered controls, partially covered controls and missing controls. Use a table with clause references. |
+| 3.3 | Regulatory gap check | List Indian regulatory expectations this policy does not reflect, for example CERT-In incident reporting and log retention, and the DPDP Act. Mark each as "needs legal confirmation". |
+
+## 4. Outcome: Audit report and revisions
+
+| # | Purpose | Prompt |
+|---|---|---|
+| 4.1 | Audit report | Produce a policy audit report with: an executive summary (under 200 words), a risk-ranked findings register (ID, category, clause, issue, severity, recommendation), a legacy-vs-ISO comparison table, and a remediation roadmap with 30/60/90-day actions. |
+| 4.2 | Draft revisions | For every Critical and High finding, write ready-to-publish replacement clause text. Use "shall" language, include owner, tool, frequency and evidence, and keep the clause numbering. |
+| 4.3 | Governance pack | Create a one-page summary for the policy governance committee: top 5 risks, decisions needed, and owners. |
+
+## 5. Quality and trust prompts
+
+| # | Purpose | Prompt |
+|---|---|---|
+| 5.1 | Hallucination guard | Which of your findings relied on knowledge outside the document, such as vendor dates or regulations? List them separately so I can verify them. |
+| 5.2 | False-positive check | Challenge your own findings. Which ones might be intentional design choices rather than defects, and why? |
+| 5.3 | Missed-issue sweep | What else in this document looks wrong that I did not ask about? Limit to the 10 most important. |
+
+## Facilitation tips
+- Run 0.2 and 0.3 live first. They show participants how well context is retained across 100+ pages.
+- Ask for tables with clause numbers and a fixed set of columns. This acts like a structured output schema and makes results easy to compare across participants.
+- Split the work across prompts (one theme per prompt) rather than asking for everything at once. Focused extraction is more complete than one giant prompt.
+- Use 1.4 and 5.1 to teach grounding and verification, which suits a technical audience used to SAP and Joule.
+- If participants compare results, the answer key is the scoring reference for the 50 planted defects.
+
+If you like, I can turn these into a one-page participant handout or a scoring sheet for comparing results against the answer key.

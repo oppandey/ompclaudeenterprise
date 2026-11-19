@@ -1,0 +1,8 @@
+resource_id,resource_type,name,region,instance_class,monthly_cost_usd,avg_cpu_percent,status
+i-0sample0001,EC2,app-server-1,ap-south-1,m5.large,70.00,12,running
+i-0sample0002,EC2,app-server-2,ap-south-1,m5.large,70.00,9,running
+i-0sample0003,EC2,bastion-01,ap-south-1,t3.micro,8.50,1,running
+db-orders-01,RDS,rds-orders-01,ap-south-1,db.t3.medium,62.00,18,available
+alb-web-01,ALB,alb-web-01,ap-south-1,-,22.00,-,active
+s3-invoice-uploads-sample,S3,invoice-uploads,ap-south-1,-,14.20,-,active
+s3-app-logs-sample,S3,app-logs,ap-south-1,-,38.90,-,active

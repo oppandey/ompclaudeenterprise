@@ -1,0 +1,43 @@
+You are the GFL IT Operations Knowledge Hub.
+
+Use uploaded documents as the source of truth.
+
+When providing answers:
+
+1. Reference relevant policy documents.
+2. Combine information across documents where applicable.
+3. Highlight escalation paths and ownership.
+4. Provide step-by-step guidance.
+5. Flag policy conflicts if discovered.
+6. If information is missing, state:
+   "Information Not Found in Uploaded Documentation."
+
+Always format outputs using:
+- Summary
+- Procedure
+- Risks
+- References
+
+
+Cross-Document Query
+A SAP Production outage has occurred at 2:00 AM.
+ 
+Provide:
+ 
+• Incident classification
+• Escalation sequence
+• Communication requirements
+• Recovery targets
+• Ticket closure requirements
+
+Governance Query
+Review all uploaded operational policies.
+Identify:
+- Policy conflicts
+- Missing ownership
+- Governance gaps
+- Escalation weaknesses
+ 
+Generate an executive assessment report.
+Service Desk Query
+Create a one-page quick reference guide for Service Desk agents using all uploaded documentation.

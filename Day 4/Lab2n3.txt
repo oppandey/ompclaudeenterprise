@@ -1,0 +1,124 @@
+Prompts
+
+Step 1: Diagram-to-spec parsing
+
+<task>
+Parse the attached architecture diagram into a structured resource specification.
+</task>
+
+<output_format>
+Return a table with these columns: Resource | Type | Region | Ingress | Egress | Encryption | Public Access | Dependencies
+Then list any ambiguities as a separate table: Element | Ambiguity | Assumption made
+</output_format>
+
+Step 2: Security policy validation
+
+<security_rules>
+- All S3 buckets: public access blocked, server-side encryption enabled (SSE-KMS)
+- Security groups: no 0.0.0.0/0 ingress on ports other than 443
+- RDS/Azure SQL: encryption at rest and in transit enforced
+- All resources: tagged with owner, environment, and cost_center
+</security_rules>
+
+<task>
+Audit the attached Terraform files against every rule in <security_rules>.
+</task>
+
+<output_format>
+| File | Line | Resource | Rule violated | Severity (Critical/High/Medium/Low) | Recommended fix |
+Sort by severity. If a rule passes, do not list it.
+</output_format>
+
+Step 3: Key exercise, finding open or unencrypted resources
+
+Review the attached CloudFormation template. Identify:
+1. S3 buckets with public ACLs or missing PublicAccessBlock configuration
+2. Security groups with ingress from 0.0.0.0/0 or ::/0
+3. Databases with StorageEncrypted: false or missing KmsKeyId
+
+Return results as a table with the resource logical ID, the exact property, the current value, and the required value.
+
+Step 4: Automated HCL refactoring
+
+Refactor the Terraform block below to meet <security_rules>. Keep the original resource names so state is not disrupted.
+
+<input_hcl>
+[paste block]
+</input_hcl>
+
+Output:
+1. The refactored HCL in a single code block
+2. A changelog table: Original attribute | New attribute | Reason
+3. Any terraform plan impact (create, update, or destroy) that the change will cause
+
+Step 5: Cost-optimization recommendations
+
+Based on the resource inventory below, recommend cost optimizations that do not reduce security posture.
+
+<inventory>
+[paste CSV or JSON]
+</inventory>
+
+Output a table: Resource | Current configuration | Recommendation | Estimated monthly saving direction (High/Med/Low) | Security impact (None/Review needed)
+Lab 3: SCADA/PLC Telemetry & Plant Diagnostics
+Required Documents
+Document	Purpose	Format
+GFL Equipment SOPs	Context constraint so answers come only from approved procedures	PDF or Markdown
+PLC fault code reference	Maps codes to meanings and causes	CSV or table
+SCADA/OPC-UA telemetry export	Real-time or sampled sensor data (drops, temperature, current)	CSV or JSON
+Modbus register map	Decodes raw register values into engineering units	CSV or PDF
+Alarm log (motor overheating, conveyor jams)	Event sequence for diagnosis	CSV or text
+Shift escalation matrix	Defines who to call and when	Table or Markdown
+Safety escalation criteria	Determines when to stop the line	Markdown
+Prompts
+
+Step 1: Context-constrained setup
+
+<context>
+You are an L1 shift technician assistant for GFL plant operations. Answer ONLY from the attached Equipment SOPs and fault code reference. If the answer is not in these documents, say "Not covered in SOP. Escalate to L2." Do not speculate about root causes that the SOPs do not support.
+</context>
+
+Step 2: Parsing telemetry
+
+<task>
+Parse the attached SCADA telemetry export and identify anomalies.
+</task>
+
+<output_format>
+| Timestamp | Tag/Sensor | Reading | Expected range (from SOP) | Deviation | Possible fault code |
+Only include rows outside the expected range.
+</output_format>
+
+Step 3: Key exercise, sensor drops, motor overheating, conveyor jams
+
+Using the attached telemetry and alarm log, reconstruct the event sequence before each alarm.
+
+For each event:
+1. What sensor or motor changed first?
+2. What fault code was raised, and what does the reference say it means?
+3. What does the matching SOP recommend as the first action?
+
+Output as a timeline table: Time | Event | Fault code | SOP reference | First action
+
+Step 4: L1 troubleshooting steps and safety escalation
+
+<safety_criteria>
+Immediate line stop and escalation to L2 and the safety officer if:
+- Motor temperature exceeds the SOP's critical threshold
+- Any E-stop or safety interlock fault is active
+- Conveyor jam persists after two reset attempts
+- Any smoke, arcing, or abnormal vibration is reported
+</safety_criteria>
+
+Given the fault below, provide:
+1. Numbered troubleshooting steps for L1, taken only from the SOP
+2. Whether any <safety_criteria> are met
+3. Escalation level and contact per the shift escalation matrix
+
+Fault: [paste fault code and alarm details]
+
+Output as a table: Step | Action | Source (SOP section) | Safety check (Pass/Stop)
+
+Step 5: Warning, not a diagnosis
+
+Add this line to every output: "This guidance comes from the GFL SOP. Confirm with the shift supervisor before taking any action on equipment."

@@ -1,0 +1,42 @@
+Demo Prompt 1: Business Analyst
+Act as a Senior Business Analyst.
+Review the attached Business Requirement Document.
+Generate:
+1. Executive Summary
+2. Functional Requirements Summary
+3. Business Risks
+4. Assumptions
+5. Open Questions
+Present the output in a professional table.
+________________________________________
+Demo Prompt 2: Solution Architect
+Act as an Enterprise Solution Architect.
+Review the BRD.
+Identify:
+• Solution components
+• Integration requirements
+• Security considerations
+• Design assumptions
+• Technical risks
+Create a high-level solution assessment.
+________________________________________
+Demo Prompt 3: SAP Consultant
+Act as a Senior SAP Finance Consultant.
+Review the requirements.
+Identify:
+• SAP modules impacted
+• Possible SAP capabilities
+• Integration points
+• Configuration requirements
+• Process improvement opportunities
+Generate recommendations for implementation.
+________________________________________
+Demo Prompt 4: Project Manager
+Review the attached BRD.
+Generate:
+• Project scope
+• Risks
+• Dependencies
+• Milestones
+• High-level implementation plan
+Create a project initiation summary.

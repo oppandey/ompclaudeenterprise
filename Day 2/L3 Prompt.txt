@@ -1,0 +1,15 @@
+A user is attempting to create a Purchase Order and receives the error:
+
+"Release Strategy Not Determined"
+
+Using all uploaded SAP documentation:
+
+1. Summarize the issue
+2. Identify probable root causes
+3. Recommend troubleshooting actions
+4. Identify configuration areas to review
+5. Suggest escalation path
+6. Provide related historical incidents
+7. Generate a test case to validate resolution
+
+Present output as an SAP Support Analysis Report.

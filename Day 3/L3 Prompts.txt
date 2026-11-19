@@ -1,0 +1,41 @@
+Prompt set for Lab 3
+
+0. Setup (run first)
+
+You are a senior IT risk and resilience consultant preparing an executive gap assessment for GFL's CIO. Inputs: (A) GFL Enterprise Security and Operational Policy v7.3, (B) my Lab 1 findings, (C) my Lab 2 DR audit findings [paste or upload]. Rules: cite the source and clause or finding ID for every statement; never invent figures, dates, systems or costs; where evidence is missing, say "not evidenced"; use the policy's own role names (CISO, DPO, Head of IT Service Continuity, IT Ops, SOC, Business owner). Confirm what you can see in A, B and C, then wait.
+
+1. Consolidate and de-duplicate
+
+Merge all Lab 1 and Lab 2 findings into one register: ID | Source (Lab 1 / Lab 2 / both) | Policy clause or DR evidence | Finding | Affected systems | Business impact. Merge duplicates and note where a Lab 1 policy weakness explains a Lab 2 recovery risk (for example, an expired exception on a plant MES server and its recovery time). List anything you could not trace to a source.
+
+2. Severity classification
+
+Classify every finding using this matrix:
+- Critical: immediate outage risk (a Tier 0/Tier 1 or plant-stopping system cannot recover, or a single point of failure with no workaround). Map to Annex F "Critical" (7 days).
+- Major: likely SLA breach (RTO/RPO breached or unverified, backup or control gaps that could cause a breach). Map to Annex F "High" (30 days).
+- Minor: documentation or process weakness with a workaround. Map to Annex F "Medium/Low" (90/180 days).
+For each, give a one-line rationale tied to evidence. Flag borderline ratings and say what evidence would change them.
+
+3. Executive gap assessment matrix
+
+Produce the gap assessment matrix: Gap ID | Domain (DR, backup, governance, legacy tech, access, ownership) | Policy requirement (clause) | Current state (evidence) | Gap | Severity | Business impact | Owner. Sort by severity, then by number of systems affected. Add a summary heat map count (Critical / Major / Minor by domain).
+
+4. Phased remediation roadmap with ownership
+
+Build a phased roadmap: Phase 1 Contain (0-30 days: all Critical), Phase 2 Stabilise (30-90 days: Major), Phase 3 Strengthen (90-180 days: Minor and structural fixes). For each action give: action | gaps addressed | accountable owner | responsible team | dependencies | effort (S/M/L) | success measure. Use the policy's role names. Where Annex F has no accountable owner, propose one and flag it as a decision for the CIO. Do not give a role more than [N] concurrent Phase 1 actions without flagging overload.
+
+5. Budget needs
+
+Estimate indicative budget needs by phase and category (tooling, infrastructure, services, internal effort). Do not use specific prices from memory. Use these assumptions: [your cost ranges, headcount rates, currency]. Show low/likely/high ranges, state every assumption, and mark each line as "indicative, to be validated with procurement".
+
+6. One-page CIO dashboard
+
+Write a one-page CIO briefing (max 350 words plus one small table): overall resilience rating; count of Critical / Major / Minor gaps; top five risks in business terms (plant downtime, data loss, audit exposure); the decisions needed from the CIO; total indicative budget by phase; and the next 30-day actions with owners. No technical jargon without a plain explanation.
+
+7. Assemble and export
+
+Assemble the executive-ready Gap Assessment Report: 1 Executive dashboard, 2 Scope and method, 3 Severity matrix, 4 Gap assessment matrix, 5 Critical findings in detail, 6 Phased remediation roadmap with owners, 7 Budget summary, 8 Appendices (full register, evidence sources, assumptions). Produce it as a polished Word document and PDF suitable for IT leadership review.
+
+8. Quality check
+
+Review the report as a sceptical CIO. Which ratings are weakly evidenced, which owners are unrealistic, and which budget lines rest on assumptions? Also list any gap in the policy requirements that the report does not address.

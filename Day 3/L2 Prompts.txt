@@ -1,0 +1,28 @@
+0. Setup prompt (run first)
+You are a senior IT resilience auditor reviewing the GFL enterprise Disaster Recovery plan against business continuity baselines (ISO 22301, ISO/IEC 27031, NIST SP 800-34). I will upload the DR strategy manuals, application criticality tiers and backup frequency logs. Rules: (1) cite the document and section for every claim; (2) never assume a target is met without test or log evidence, and mark it "Unverified" instead; (3) if information is missing or documents conflict, say so rather than filling the gap; (4) present results in tables where possible. Confirm which documents you can see and wait for my next instruction.
+
+Step 1: Document ingestion
+Build an evidence register from the uploaded files: document name, version, date, owner, scope, and whether it was reviewed in the last 12 months. Flag any document that looks outdated or has no owner.
+Extract every core manufacturing system into a table with: tier, target RTO, target RPO, dependencies, named recovery owner, and source document. List any system that appears in one document but not the others (for example, in the backup logs but not in the tier list).
+Check the criticality tiers for internal consistency. Do any systems share a tier but have very different targets? Are any plant-stopping systems (MES, SCADA, shop-floor control) placed below Tier 1? Is any tier missing a defined RTO or RPO?
+
+Step 2: RTO/RPO audit
+From the backup frequency logs, calculate the worst-case RPO for each core manufacturing system. Use the longest gap between successful backups or replication cycles in the log period, and note the period you used. Compare it with the target RPO and show the variance.
+From the DR test reports and incident records, find the achieved recovery time for each core manufacturing system. Compare it with the target RTO. Where there is no test evidence, mark it "Unverified" and do not estimate.
+Combine the two analyses into one variance table: System | Tier | Target RTO | Actual RTO | Target RPO | Actual RPO | Status (Met / At risk within 20% / Breached / Unverified) | Evidence source. Then summarise the count in each status and name the five largest gaps.
+Test whether the targets are technically achievable. For example, identify any system with a 15-minute RPO but a daily backup cycle, or a 1-hour RTO that depends on a manual restore from tape or off-site storage.
+
+Step 3: Risk discovery
+List every manual failover step in the runbooks. For each, give the system, the step, who performs it, and whether there is documented test evidence (date, tester, outcome). Flag steps that depend on one named person, undocumented commands, outdated contacts, or credentials that may be unavailable during an outage.
+Compare the backup logs against the full system list using the 3-2-1 principle (3 copies, 2 media types, 1 off-site, plus an immutable or offline copy where practicable). Produce a coverage matrix and flag every system without a secondary or off-site copy. Also list failed or skipped jobs and any with no recorded restore test.
+Using the architecture and dependency documents, trace each Tier 0 and Tier 1 system through its dependencies: network, storage, identity and directory services, DNS, database, licensing, shop-floor connectivity, site and vendor. Identify every single point of failure and every shared dependency whose loss would stop multiple critical systems.
+Consolidate all findings into a risk register: ID | Finding | Category (manual failover, backup gap, SPOF, target gap) | Affected systems | Evidence and source | Severity (Critical / High / Medium / Low) | Recommendation. Rate severity using this rule: Critical means a Tier 0 or Tier 1 system cannot meet its recovery target or has no recovery path.
+
+Step 4: Report drafting
+Draft the technical DR audit report using this structure: 1 Executive summary, 2 Scope and method, 3 DR posture overview, 4 RTO/RPO audit results, 5 Critical vulnerabilities, 6 Recommendations and roadmap, 7 Appendices. Lead with the critical vulnerabilities in system recovery workflows. Every finding must cite its evidence and severity.
+Write the executive summary in under 250 words for a non-technical sponsor: overall DR readiness rating, the three most serious risks in business terms (production downtime and data loss), and the top three actions.
+Turn the risk register into a prioritised remediation roadmap with owner, effort (S/M/L), dependency and suggested timeline, grouped as 0 to 30 days, 30 to 90 days and 90+ days.
+
+Quality-check prompts (use after any step)
+Review your last output. Which statements rest on assumptions rather than a cited document? Which systems or documents did you not cover? List the evidence gaps I should ask the client to close.
+Challenge these findings as the DR owner would. Which could be disputed, and what additional evidence would settle each one?
