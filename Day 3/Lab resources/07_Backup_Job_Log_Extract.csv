@@ -1,0 +1,13 @@
+Date,System,Job_Type,Status,Duration_Min,Offsite_Copy,Restore_Test_Date,Comment
+03-01-2026,SAP HANA,Daily+Logs,Success,88,Yes,12-12-2025,
+03-01-2026,Integration Hub DB,Daily,Success,41,Yes,18-06-2025,Restore test older than six months
+03-01-2026,Active Directory,System State,Warning,19,Yes,02-11-2025,One domain controller excluded
+04-01-2026,Manufacturing Execution,Daily,Failed,54,No,22-08-2025,Storage timeout
+05-01-2026,Manufacturing Execution,Retry,Failed,49,No,22-08-2025,Storage timeout
+06-01-2026,Manufacturing Execution,Retry,Success,61,Yes,22-08-2025,Resolved after storage restart
+07-01-2026,Employee Portal,Daily,Success,24,Yes,14-10-2025,
+07-01-2026,SaaS HR Export,Weekly,Success,36,Yes,,No restore test recorded
+07-01-2026,Encryption Key Backup,Weekly,Success,8,Yes,,No restore test requirement
+08-01-2026,Document Management,Daily,Warning,67,Yes,03-09-2025,Two files skipped
+08-01-2026,SAP HANA,Daily+Logs,Success,91,Yes,12-12-2025,
+09-01-2026,Integration Hub DB,Daily,Success,39,Yes,18-06-2025,
